@@ -11,12 +11,10 @@ angular.module('carouselApp')
 .controller('ManagementCtrl', ['$scope', '$log', '$http', 'CONFIG', function ($scope, $log, $http, CONFIG) {
 	console.log(CONFIG.list);
 	//CONFIG.list[0].image = "http://www.boorp.com/sfondi_gratis_desktop_pc/sfondi_gratis/sfondi_paesaggi_mare_montagna/paesaggi_toscana_casale.jpg";
-	$scope.sendPost = function(){
-		console.log("send data to http");
-		var data = {list: [
+	var data = {list: [
 			{
 				image: '',
-				text: 'prova nuovo 1',
+				text: 'prova 1',
 				index: 1
 			},
 			{
@@ -34,8 +32,15 @@ angular.module('carouselApp')
 				text: 'prova 4',
 				index: 4
 			}]};
-
-		$http.post("http://localhost:9001/setList", data).success(function(data, status) {
+	
+	
+	$scope.configArea = JSON.stringify(data, "", 4);
+	$scope.sendPost = function(){
+		console.log("send data to http");
+		//var dataTosend = data;
+		console.log($scope.configArea);
+		var dataTosend = JSON.parse($scope.configArea);	
+		$http.post("http://localhost:9001/setList", dataTosend).success(function(data, status) {
 			$scope.response = data;
 			console.log("Response back");
 		});

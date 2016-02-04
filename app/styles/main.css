@@ -48,6 +48,14 @@ body {
   font-size: 7vw;
 }
 
+.container div.form-group{
+ height: auto;
+}
+
+.form-control.config-area{
+	height: 70vh;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,

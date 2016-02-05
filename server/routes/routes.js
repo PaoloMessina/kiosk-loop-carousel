@@ -10,7 +10,7 @@ var appRouter = function(app) {
 		console.log(req);
 
 		var bodyTemplate = "angular.module('carouselApp.dev', [])\n\t.constant('CONFIG', {\n\t\tlist: [@LIST@]\n});";
-		var listItemTemplate = "\n\t\t\t{\n\t\t\t\timage: '@IMAGE@',\n\t\t\t\ttext: '@TEXT@',\n\t\t\t\tid: @ID@\n\t\t\t}";
+		var listItemTemplate = "\n\t\t\t{\n\t\t\t\timage: '@IMAGE@',\n\t\t\t\ttext: '@TEXT@',\n\t\t\t\tindex: @ID@\n\t\t\t}";
 
 		//TODO: get json in post
 		//var jsonString = '[{"image":"", "text": "prova 1", "index": 1}, {"image":"", "text": "prova 2", "index": 2}, {"image":"", "text": "prova 3", "index": 3}, {"image":"", "text": "prova 4", "index": 4}]';
@@ -19,7 +19,7 @@ var appRouter = function(app) {
 
 		var list = "";
 		jsonArray.forEach(function(item, idx, array) {
-			var itemString = listItemTemplate.replace("@IMAGE@", item.image).replace("@TEXT@", item.text).replace("@ID@", item.id);
+			var itemString = listItemTemplate.replace("@IMAGE@", item.image).replace("@TEXT@", item.text).replace("@ID@", item.index);
 			list = list + itemString;
 			if(idx !== array.length - 1){
 				list += ",";

@@ -1,6 +1,35 @@
-<div class="form-group">
-  <label for="comment">Configuration:</label>
+<div class="container padded">
+    <h2>Configurazione</h2>
+
+    <!-- Todos input -->
+    <form role="form" ng-submit="addTodo()">
+        <div class="row">
+            <div class="input-group">
+                <input type="text" ng-model="text" placeholder="Aggiungi qui una frase" class="form-control">
+                <span class="input-group-btn">
+                    <input type="submit" class="btn btn-primary" value="Add">
+                </span>
+            </div>
+        </div>
+    </form>
+
+    <br>
+
+    <!-- Todos list -->
+    <p class="input-group" ng-repeat="item in list">
+      <input type="text" ng-model="item.text" class="form-control">
+      <span class="input-group-btn">
+        <button class="btn btn-danger" ng-click="removeTodo($index)" aria-label="Remove">X</button>
+      </span>
+    </p>
+
+    <button type="button" class="btn btn-primary" ng-click="sendPost()">Applica</button>
+</div>
+
+<div ng-show="false" class="form-group">
   <textarea class="form-control config-area" rows="5" id="configuration" ng-model="configArea"></textarea>
 </div>
-<button type="button" class="btn btn-primary" ng-click="sendPost()">Primary</button>
-<div ng-bind="response"><div>
+
+
+
+<div ng-bind="response"></div>

@@ -34,15 +34,27 @@ angular.module('carouselApp')
 			}]};
 	
 	
-	$scope.configArea = JSON.stringify(data, "", 4);
+	//$scope.configArea = JSON.stringify(data, "", 4);
 	$scope.sendPost = function(){
 		console.log("send data to http");
 		//var dataTosend = data;
-		console.log($scope.configArea);
-		var dataTosend = JSON.parse($scope.configArea);	
+		//console.log($scope.configArea);
+		//var dataTosend = JSON.parse($scope.configArea);
+        var dataTosend = {list: $scope.list};
+        console.log(dataTosend);
 		$http.post("http://localhost:9001/setList", dataTosend).success(function(data, status) {
 			$scope.response = data;
 			console.log("Response back");
 		});
 	};
+
+    $scope.list = CONFIG.list;
+    $scope.addTodo = function () {
+        var obj = {image:'', text: $scope.text, index: $scope.list.length};
+        $scope.list.push(obj);
+        $scope.text = '';
+    };
+    $scope.removeTodo = function (index) {
+        $scope.list.splice(index, 1);
+    };
 }]);

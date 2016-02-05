@@ -8,7 +8,7 @@
  * Controller of the carouselApp
  */
 angular.module('carouselApp')
-.controller('ManagementCtrl', ['$scope', '$log', '$http', 'CONFIG', function ($scope, $log, $http, CONFIG) {
+.controller('ManagementCtrl', ['$scope', '$log', '$location', '$http', 'CONFIG', function ($scope, $log, $location, $http, CONFIG) {
 	console.log(CONFIG.list);
 	//CONFIG.list[0].image = "http://www.boorp.com/sfondi_gratis_desktop_pc/sfondi_gratis/sfondi_paesaggi_mare_montagna/paesaggi_toscana_casale.jpg";
 	var data = {list: [
@@ -42,7 +42,7 @@ angular.module('carouselApp')
 		//var dataTosend = JSON.parse($scope.configArea);
         var dataTosend = {list: $scope.list};
         console.log(dataTosend);
-		$http.post("http://localhost:9001/setList", dataTosend).success(function(data, status) {
+		$http.post("http://"+ $location.host + ":9001/setList", dataTosend).success(function(data, status) {
 			$scope.response = data;
 			console.log("Response back");
 		});

@@ -42,7 +42,8 @@ angular.module('carouselApp')
 		//var dataTosend = JSON.parse($scope.configArea);
         var dataTosend = {list: $scope.list};
         console.log(dataTosend);
-		$http.post("http://"+ $location.host + ":9001/setList", dataTosend).success(function(data, status) {
+        console.log("http://"+ $location.host() + ":9001/setList");
+		$http.post("http://"+ $location.host() + ":9001/setList", dataTosend).success(function(data, status) {
 			$scope.response = data;
 			console.log("Response back");
 		});

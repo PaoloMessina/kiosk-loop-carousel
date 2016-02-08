@@ -2,6 +2,9 @@
 
 var fs = require('fs');
 var documentBody;
+
+console.log("Start backup!");
+
 fs.readFile('/home/pi/carousel/kiosk-loop-carousel/app/scripts/config/config.js', 'utf8', function (err,data) {
   if (err) {
     return console.log(err);
@@ -18,5 +21,7 @@ fs.readFile('/home/pi/carousel/kiosk-loop-carousel/app/scripts/config/config.js'
 		});
 	}
 });
+
+console.log("end backup!");
 
 

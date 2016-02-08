@@ -49,7 +49,7 @@ angular.module('carouselApp')
         console.log(dataTosend);
         console.log("http://"+ $location.host() + ":9001/setList");
 		$http.post("http://"+ $location.host() + ":9001/setList", dataTosend).success(function(data, status) {
-			$scope.response = data;
+			//$scope.response = data;
 			console.log("Response back");
 		});
 	};

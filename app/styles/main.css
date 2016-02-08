@@ -15,7 +15,7 @@ html, body, .container {
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
 .carousel{
-  background-color: black;
+  /*background-color: black;*/
 }
 
 .browsehappy {
@@ -53,11 +53,50 @@ body {
 }
 
 .container div.form-group{
+ width: auto;
  height: auto;
 }
 
 .form-control.config-area{
 	height: 70vh;
+}
+
+.form-control.short{
+    width: auto;
+}
+
+.form-control.short{
+    width: auto;
+}
+
+.container div.minicolors{
+    width: auto;
+    height: auto;
+}
+
+.container div.minicolors-panel{
+    width: 173px;
+    height: 152px;
+}
+
+.container div.minicolors-opacity-slider{
+    width: 20px;
+    height: 150px;
+}
+
+.container div.minicolors-slider{
+    width: 20px;
+    height: 150px
+}
+
+.container div.minicolors-slider .minicolors-picker{
+    width: 18px;
+    height: 2px;
+}
+
+.container div.inicolors-opacity-slider{
+    width: 20px;
+    height: 150px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */

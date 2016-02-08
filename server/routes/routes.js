@@ -13,9 +13,9 @@ var appRouter = function(app) {
 	app.post("/setList", function(req, res) {
 		var fs = require('fs');
 
-		console.log(req);
+		console.log(req.body);
 
-		var bodyTemplate = "angular.module('carouselApp.dev', [])\n\t.constant('CONFIG', {\n\t\tlist: [@LIST@]\n});";
+		var bodyTemplate = "angular.module('carouselApp.dev', [])\n\t.constant('CONFIG', {\n\t\tinterval: @INTERVAL@,\n\t\tcarouselTextColor: '@CAROUSEL_TEXT_COLOR@',\n\t\tcarouselBackgroundColor: '@CAROUSEL_BACKGROUND_COLOR@',\n\t\tlist: [@LIST@]\n});";
 		var listItemTemplate = "\n\t\t\t{\n\t\t\t\timage: '@IMAGE@',\n\t\t\t\ttext: '@TEXT@',\n\t\t\t\tindex: @ID@\n\t\t\t}";
 
 		//TODO: get json in post
@@ -33,6 +33,9 @@ var appRouter = function(app) {
 		});
 
 		var documentBody = bodyTemplate.replace("@LIST@", list);
+		documentBody = documentBody.replace('@INTERVAL@', req.body.interval ? req.body.interval : 3000);
+		documentBody = documentBody.replace('@CAROUSEL_TEXT_COLOR@', req.body.carouselTextColor ? req.body.carouselTextColor : '#FFFFFF');
+		documentBody = documentBody.replace('@CAROUSEL_BACKGROUND_COLOR@', req.body.carouselBackgroundColor ? req.body.carouselBackgroundColor : '#000000');
 
 		fs.writeFile("app/scripts/config/config.js", documentBody, function(err) {
 			if(err) {

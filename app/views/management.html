@@ -23,6 +23,35 @@
       </span>
     </p>
 
+    <div class="form-group">
+        <label for="color-input-backgorund">Sfondo:</label>
+        <input
+                minicolors="customSettings"
+                id="color-input-backgorund"
+                class="form-control short"
+                type="text"
+                ng-model="carouselBackgroundColor" />
+    </div>
+
+    <div class="form-group">
+        <label for="color-input-text">Testo:</label>
+        <input
+                minicolors="customSettings"
+                id="color-input-text"
+                class="form-control short"
+                type="text"
+                ng-model="carouselTextColor" />
+    </div>
+
+    <div class="form-group">
+        <label for="interval">Intervallo:</label>
+        <input
+                id="interval"
+                class="form-control short"
+                type="text"
+                ng-model="interval" />
+    </div>
+
     <button type="button" class="btn btn-primary" ng-click="sendPost()">Applica</button>
 </div>
 

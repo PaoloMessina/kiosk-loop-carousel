@@ -1,24 +1,27 @@
 angular.module('carouselApp.dev', [])
 	.constant('CONFIG', {
+		interval: 2000,
+		carouselTextColor: '#ffffff',
+		carouselBackgroundColor: '#000000',
 		list: [
 			{
 				image: '',
 				text: 'prova 1',
-				index: undefined
+				index: 1
 			},
 			{
 				image: '',
 				text: 'prova 2',
-				index: undefined
+				index: 2
 			},
 			{
 				image: '',
 				text: 'prova 3',
-				index: undefined
+				index: 3
 			},
 			{
 				image: '',
 				text: 'prova 4',
-				index: undefined
+				index: 4
 			}]
 });

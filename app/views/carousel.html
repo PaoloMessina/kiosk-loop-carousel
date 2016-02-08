@@ -3,7 +3,7 @@
       <uib-slide ng-repeat="slide in slides" active="slide.active" index="slide.id" >
         <img ng-show="{{slide.image.length > 2}}" ng-src="{{slide.image}}" style="margin:auto;">
         <div class="carousel-caption">
-          <div class="text" ng-style="{'color': carouselTextColor}">{{slide.text}}</div>
+          <pre class="text" ng-style="{'color': carouselTextColor}">{{slide.text}}</pre>
         </div>
       </uib-slide>
     </uib-carousel>

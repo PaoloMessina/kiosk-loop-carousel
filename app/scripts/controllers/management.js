@@ -48,7 +48,7 @@ angular.module('carouselApp')
 
         console.log(dataTosend);
         //console.log("http://"+ $location.host() + ":85/setList");
-		$http.post("http://"+ $location.host() + ":85/setList", dataTosend).success(function(data, status) {
+		$http.post("http://"+ $location.host() + ":6040/setList", dataTosend).success(function(data, status) {
 			//$scope.response = data;
 			console.log("Response back");
 		});

@@ -32,7 +32,7 @@ module.exports = function (grunt) {
 
     express: {
       options: {
-          PORT: 9001
+          PORT: 85
       },
       dev: {
         options: {
@@ -120,7 +120,7 @@ module.exports = function (grunt) {
       },
       test: {
         options: {
-          port: 9001,
+          port: 9000,
           middleware: function (connect) {
             return [
               connect.static('.tmp'),

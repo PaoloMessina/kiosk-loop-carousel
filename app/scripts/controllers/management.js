@@ -9,7 +9,7 @@
  */
 angular.module('carouselApp')
 .controller('ManagementCtrl', ['$scope', '$log', '$location', '$http', 'CONFIG', function ($scope, $log, $location, $http, CONFIG) {
-	console.log(CONFIG.list);
+	//console.log(CONFIG.list);
 	//CONFIG.list[0].image = "http://www.boorp.com/sfondi_gratis_desktop_pc/sfondi_gratis/sfondi_paesaggi_mare_montagna/paesaggi_toscana_casale.jpg";
 
     $scope.customSettings = {
@@ -47,8 +47,8 @@ angular.module('carouselApp')
             dataTosend.carouselTextColor = '#FFFFFF';
 
         console.log(dataTosend);
-        console.log("http://"+ $location.host() + ":9001/setList");
-		$http.post("http://"+ $location.host() + ":9001/setList", dataTosend).success(function(data, status) {
+        //console.log("http://"+ $location.host() + ":85/setList");
+		$http.post("http://"+ $location.host() + ":85/setList", dataTosend).success(function(data, status) {
 			//$scope.response = data;
 			console.log("Response back");
 		});

@@ -50,6 +50,8 @@ body {
   vertical-align: middle;
   display: table-cell;
   font-size: 7vw;
+  background-color: transparent;
+  border: 0;
 }
 
 .container div.form-group{

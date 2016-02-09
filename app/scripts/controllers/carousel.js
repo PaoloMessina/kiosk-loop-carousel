@@ -15,4 +15,8 @@ angular.module('carouselApp')
     $scope.carouselBackgroundColor = CONFIG.carouselBackgroundColor;
     $scope.carouselTextColor = CONFIG.carouselTextColor;
   	$scope.noWrapSlides = false;
+  	
+  	$scope.getText = function(text){
+  		return text.replace("<br>", "\n");
+  	};
 }]);

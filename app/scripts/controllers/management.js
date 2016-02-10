@@ -47,7 +47,7 @@ angular.module('carouselApp')
             dataTosend.carouselTextColor = '#FFFFFF';
 
         console.log(dataTosend);
-        //console.log("http://"+ $location.host() + ":85/setList");
+        console.log("http://"+ $location.host() + ":85/setList");
 		$http.post("http://"+ $location.host() + ":6040/setList", dataTosend).success(function(data, status) {
 			//$scope.response = data;
 			console.log("Response back");

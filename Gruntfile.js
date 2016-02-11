@@ -32,7 +32,7 @@ module.exports = function (grunt) {
 
     express: {
       options: {
-          PORT: 6040
+          PORT: 9000
       },
       dev: {
         options: {
@@ -94,7 +94,7 @@ module.exports = function (grunt) {
     // The actual grunt server settings
     connect: {
       options: {
-        port: 85,
+        port: 6040,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: '0.0.0.0',
         livereload: 35729

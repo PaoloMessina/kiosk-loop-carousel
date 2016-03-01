@@ -52,6 +52,7 @@ body {
   font-size: 7vw;
   background-color: transparent;
   border: 0;
+  white-space: pre;
 }
 
 .container div.form-group{

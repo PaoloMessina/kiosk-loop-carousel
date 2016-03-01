@@ -17,6 +17,7 @@ angular.module('carouselApp')
   	$scope.noWrapSlides = false;
   	
   	$scope.getText = function(text){
-  		return text.replace("<br>", "\n");
+  		return text.replace(/\<br>/g, '\n');
+  		//return text.replace("<br>", "\n");
   	};
 }]);
